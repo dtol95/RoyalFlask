@@ -1,0 +1,52 @@
+{
+    "matches": [
+        {
+            "id": 68221,
+            "name": "SRoyal 2023-09-06 #1 - Match 1",
+            "clubMatchLiveId": "LID-MTCH-2olzsdf3nqknpw0",
+            "position": 0,
+            "isCompleted": true,
+            "tags": [
+                "Master",
+                "Final"
+            ],
+            "deletedOn": null
+        },
+        {
+            "id": 68222,
+            "name": "SRoyal 2023-09-06 #1 - Match 2",
+            "clubMatchLiveId": "LID-MTCH-bfpsty543t0mh0n",
+            "position": 1,
+            "isCompleted": true,
+            "tags": [
+                "Gold",
+                "Final"
+            ],
+            "deletedOn": null
+        },
+        {
+            "id": 68223,
+            "name": "SRoyal 2023-09-06 #1 - Match 3",
+            "clubMatchLiveId": "LID-MTCH-pxj4atpzyt1ypcu",
+            "position": 2,
+            "isCompleted": true,
+            "tags": [
+                "Silver",
+                "Final"
+            ],
+            "deletedOn": null
+        },
+        {
+            "id": 68224,
+            "name": "SRoyal 2023-09-06 #1 - Match 4",
+            "clubMatchLiveId": "LID-MTCH-20b54jixsgfkecd",
+            "position": 3,
+            "isCompleted": true,
+            "tags": [
+                "Bronze",
+                "Final"
+            ],
+            "deletedOn": null
+        }
+    ]
+}

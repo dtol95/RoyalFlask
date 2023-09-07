@@ -1,0 +1,192 @@
+{
+    "SuperRoyalID": 9563,
+    "SuperRoyalName": "SRoyal 2023-09-06 #1",
+    "tags": [
+        "Bronze",
+        "Final"
+    ],
+    "results": [
+        {
+            "participant": "65ded58c-f26e-41eb-935a-3d634a5a1ad9",
+            "rank": 1,
+            "score": 0,
+            "zone": "World",
+            "team": "gyocvkc33jrne5k",
+            "alias": "Sivleto"
+        },
+        {
+            "participant": "0e2ef3aa-d389-4c8e-b6ee-5c2de9bcd822",
+            "rank": 2,
+            "score": 0,
+            "zone": "World",
+            "team": "qvavw3gusot10mf",
+            "alias": "RaidMagician13"
+        },
+        {
+            "participant": "b1730a3b-c98b-4c25-9248-555c036b2105",
+            "rank": 3,
+            "score": 0,
+            "zone": "World",
+            "team": "qvavw3gusot10mf",
+            "alias": "Ellipsess"
+        },
+        {
+            "participant": "093e1371-6f23-4907-879a-ee918d93d0dc",
+            "rank": 4,
+            "score": 0,
+            "zone": "World",
+            "team": "hjhhome1reebeqc",
+            "alias": "ARRROZZZ"
+        },
+        {
+            "participant": "f46aba0d-2285-4bdf-8820-58be476a8690",
+            "rank": 5,
+            "score": 0,
+            "zone": "World",
+            "team": "hjhhome1reebeqc",
+            "alias": "FastMimi"
+        },
+        {
+            "participant": "4320c660-1b94-410e-9250-e9517d570d7f",
+            "rank": 6,
+            "score": 0,
+            "zone": "World",
+            "team": "bki2yqd3qm1et3j",
+            "alias": "Fleji_"
+        },
+        {
+            "participant": "f5dd3c83-e289-4248-b08f-054b128e37d8",
+            "rank": 7,
+            "score": 0,
+            "zone": "World",
+            "team": "bki2yqd3qm1et3j",
+            "alias": "MysticSoldier12"
+        },
+        {
+            "participant": "1297674a-8f16-452a-b6c7-2b7c4aa85dd6",
+            "rank": 8,
+            "score": 0,
+            "zone": "World",
+            "team": "qvavw3gusot10mf",
+            "alias": "Patrick-___-"
+        },
+        {
+            "participant": "99560c12-c897-4f0d-bd71-4d8fb9eb26c5",
+            "rank": 9,
+            "score": 0,
+            "zone": "World",
+            "team": "elkrc30q24xwfdj",
+            "alias": "insertbrainher3"
+        },
+        {
+            "participant": "f69fe532-9920-4fe0-aa1a-cd97369c1a32",
+            "rank": 10,
+            "score": 0,
+            "zone": "World",
+            "team": "gyocvkc33jrne5k",
+            "alias": "DewOfShoe"
+        },
+        {
+            "participant": "c28f1937-2c95-4508-ada8-3b518ce996b8",
+            "rank": 11,
+            "score": 0,
+            "zone": "World",
+            "team": "gyocvkc33jrne5k",
+            "alias": "Oisigan"
+        },
+        {
+            "participant": "78e7e770-e68d-4702-bb55-87bd9bff1491",
+            "rank": 12,
+            "score": 0,
+            "zone": "World",
+            "team": "bki2yqd3qm1et3j",
+            "alias": "steffisen7"
+        },
+        {
+            "participant": "82407d39-d8b8-4afd-b2b4-caeef4b8572c",
+            "rank": null,
+            "score": null,
+            "zone": "World",
+            "team": "uj1cena5gajtllv",
+            "alias": "TheMightyPino"
+        },
+        {
+            "participant": "d63054a0-f977-4f1b-9dcb-644ef5ed735d",
+            "rank": null,
+            "score": null,
+            "zone": "World",
+            "team": "uj1cena5gajtllv",
+            "alias": "k477R"
+        },
+        {
+            "participant": "debd5277-ca7f-4420-a11d-720e227ac5c4",
+            "rank": null,
+            "score": null,
+            "zone": "World",
+            "team": "uj1cena5gajtllv",
+            "alias": "ivann30031999"
+        },
+        {
+            "participant": "ed648b5f-22dd-4cfa-a5f0-6357627110c3",
+            "rank": null,
+            "score": null,
+            "zone": "World",
+            "team": "elkrc30q24xwfdj",
+            "alias": "EdgarJaffingto"
+        },
+        {
+            "participant": "1bccc8d1-e941-42bb-8ee4-38e6dd1eb04d",
+            "rank": null,
+            "score": null,
+            "zone": "World",
+            "team": "elkrc30q24xwfdj",
+            "alias": "GTH."
+        },
+        {
+            "participant": "1ac23b40-abd7-4998-8584-ea1f502352c6",
+            "rank": null,
+            "score": null,
+            "zone": "World",
+            "team": "hjhhome1reebeqc",
+            "alias": "eviL1ne81"
+        }
+    ],
+    "teams": [
+        {
+            "position": 3,
+            "team": "elkrc30q24xwfdj",
+            "rank": 4,
+            "score": 3
+        },
+        {
+            "position": 4,
+            "team": "bki2yqd3qm1et3j",
+            "rank": 5,
+            "score": 2
+        },
+        {
+            "position": 5,
+            "team": "uj1cena5gajtllv",
+            "rank": 6,
+            "score": 1
+        },
+        {
+            "position": 8,
+            "team": "hjhhome1reebeqc",
+            "rank": 3,
+            "score": 4
+        },
+        {
+            "position": 10,
+            "team": "gyocvkc33jrne5k",
+            "rank": 1,
+            "score": 6
+        },
+        {
+            "position": 15,
+            "team": "qvavw3gusot10mf",
+            "rank": 2,
+            "score": 5
+        }
+    ]
+}
