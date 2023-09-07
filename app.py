@@ -16,28 +16,31 @@ from datetime import datetime, time, timedelta
 # Create an instance of the scheduler
 scheduler = BackgroundScheduler()
 
-# Define the job to run the fetch_results() function at specific times
-def run_fetch_results():
-    now = datetime.utcnow()
-    times_to_run = [time(2, 25), time(10, 25), time(18, 25)]
-
-    for scheduled_time in times_to_run:
-        target_time = datetime.combine(now.date(), scheduled_time)
-        if now.time() < scheduled_time:
-            scheduler.add_job(fetch_results, trigger='date', run_date=target_time)
-        else:
-            target_time += timedelta(days=1)
-            scheduler.add_job(fetch_results, trigger='date', run_date=target_time)
-
-# Define the job to run the fetch_results() function every 2 minutes until a certain time
+# Define the job to run the fetch_results() function every 2 minutes within certain time windows
 def run_fetch_results_every_2_minutes():
     now = datetime.utcnow()
-    end_times = [time(2, 50), time(10, 50), time(18, 50)]
+    time_windows = [
+        (time(2, 25), time(2, 55)),
+        (time(10, 25), time(10, 55)),
+        (time(18, 25), time(18, 55))
+    ]
 
-    for end_time in end_times:
-        target_time = datetime.combine(now.date(), end_time)
-        if now.time() < end_time:
-            scheduler.add_job(fetch_results, trigger='interval', minutes=2, end_date=target_time)
+    for start_time, end_time in time_windows:
+        start_datetime = datetime.combine(now.date(), start_time)
+        end_datetime = datetime.combine(now.date(), end_time)
+
+        # If the current time has passed the end time for today, schedule for the next day
+        if now.time() > end_time:
+            start_datetime += timedelta(days=1)
+            end_datetime += timedelta(days=1)
+
+        scheduler.add_job(
+            fetch_results,
+            trigger='interval',
+            minutes=2,
+            start_date=start_datetime,
+            end_date=end_datetime
+        )
 
 # Start the scheduler
 scheduler.start()
