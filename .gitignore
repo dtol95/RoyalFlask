@@ -1,2 +1,17 @@
 
 .env
+venv/Bronze_Final.json
+venv/competitions.json
+venv/competitions_unsorted.json
+venv/Gold_Final.json
+venv/Master_Final.json
+venv/matches_round_23584.json
+venv/matches_round_23585.json
+venv/matches_round_23586.json
+venv/matches_round_23587.json
+venv/modified_participants_match_68221.json
+venv/modified_participants_match_68223.json
+venv/modified_participants_match_68222.json
+venv/modified_participants_match_68224.json
+venv/newest_winner_rounds.json
+venv/Silver_Final.json
