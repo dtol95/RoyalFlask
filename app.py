@@ -120,7 +120,6 @@ def fetch_results():
         "audience": "NadeoServices"
     }
 
-
     try:
         # Send POST request to Nadeo for LiveServices token
         response_nadeo_live = requests.post("https://prod.trackmania.core.nadeo.online/v2/authentication/token/ubiservices",
@@ -145,6 +144,27 @@ def fetch_results():
         print("Timeout Error:", errt)
     except requests.exceptions.RequestException as err:
         print("Something went wrong", err)
+
+    def get_access_token():
+        token_url = "https://api.trackmania.com/api/access_token"
+        payload = {
+            'grant_type': 'client_credentials',
+            'client_id': os.environ.get("CLIENT_ID"),
+            'client_secret': os.environ.get("CLIENT_SECRET")
+        }
+        headers = {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        try:
+            response = requests.post(token_url, headers=headers, data=payload)
+            response.raise_for_status()
+            token_data = response.json()
+            return token_data.get('access_token')
+        except requests.exceptions.HTTPError as err:
+            print(f"HTTP Error: {err}")
+        except requests.exceptions.RequestException as err:
+            print(f"Error: {err}")
+        return None
 
     # Get the access tokens
     access_token_live = response_nadeo_live.json().get('accessToken')
@@ -262,6 +282,12 @@ def fetch_results():
             # Fetch the matches from the matches_data
             matches = matches_data['matches']
 
+            # Fetch the access token for display names
+            access_token_for_display_names = get_access_token()
+            if not access_token_for_display_names:
+                print("Failed to obtain access token for display names.")
+                return  # or handle this situation appropriately
+
             # For each match, get the participants
             for match in matches:
                 club_match_id = match['id']
@@ -280,31 +306,43 @@ def fetch_results():
                     participants = participants_data['results']
                     teams = participants_data['teams']
 
+                    
                     # Extract account IDs from participants
                     account_ids = [participant['participant'] for participant in participants]
+                    print(f"Account IDs extracted: {account_ids}")
 
                     # Fetch display names using account IDs
                     display_names_headers = {
                         "Content-Type": "application/json",
-                        "Authorization": f"nadeo_v1 t={access_token_services}",
+                        "Authorization": f"Bearer {access_token_for_display_names}",
                         "User-Agent": "Trackmania Royal Fan Site / lotnead@protonmail.com"
                     }
 
-                    display_names_response = requests.get(display_names_url.format(','.join(account_ids)),
-                                                        headers=display_names_headers)
+                    # Forming the new URL for display names
+                    new_display_names_url = "https://api.trackmania.com/api/display-names"
+                    account_ids_params = {'accountId[]': account_ids}
 
-                    if display_names_response.status_code == 200:
-                        display_names_data = display_names_response.json()
+                    # Making the GET request to the new endpoint
+                    new_display_names_response = requests.get(new_display_names_url, headers=display_names_headers, params=account_ids_params)
 
-                        # Map display names to account IDs
-                        account_id_to_display_name = {entry['accountId']: entry['displayName'] for entry in
-                                                    display_names_data}
+                    # Debugging: Print response details
+                    print(f"Display Names API Call - Status Code: {new_display_names_response.status_code}")
+                    print(f"Display Names API Call - Response Headers: {new_display_names_response.headers}")
+                    print(f"Display Names API Call - Response Body: {new_display_names_response.text}")
 
-                        # Replace participant IDs with display names and preserve matchLiveId and roundPosition fields
-                        for participant in participants:
-                            account_id = participant['participant']
-                            display_name = account_id_to_display_name.get(account_id, 'Unknown')
-                            participant['alias'] = display_name
+                    # Checking and processing the response
+                    if new_display_names_response.status_code == 200:
+                        new_display_names_data = new_display_names_response.json()
+                        print(f"Display Names Response Data: {new_display_names_data}")
+                    else:
+                        print(f"Failed to fetch display names. Status code: {new_display_names_response.status_code}")
+                        new_display_names_data = {}
+
+                    # Loop through participants and update their display names
+                    for participant in participants:
+                        account_id = participant['participant']
+                        display_name = new_display_names_data.get(account_id, 'Unknown')
+                        participant['participant'] = display_name  # Replace the account ID with display name
 
                     # Initialize modified_participants dictionary for each match
                     modified_participants = {
